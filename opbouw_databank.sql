@@ -150,8 +150,8 @@ create table trip_halte(
 	constraint trip_halte_pkey primary key(code,nummer),
 	constraint trip_halte_fkey2 foreign key (naam) references station(naam) ON UPDATE CASCADE ON DELETE CASCADE,
 	constraint trip_halte_fkey foreign key (code) references trip(code) ON UPDATE CASCADE ON DELETE CASCADE,
-	constraint check_bezetting  check verwachteBezetting>0,
-	constraint check_nummer check nummer>0
+	constraint check_bezetting  check (verwachteBezetting>0),
+	constraint check_nummer check (nummer>0)
 );
 
 
